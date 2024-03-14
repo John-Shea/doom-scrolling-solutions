@@ -42,7 +42,7 @@ class RT_main():
 
     #Functions below are fed the html document to parse for specfic elements. 
 
-    def get_movie_name(self, rt_doc):
+    def get_movie_title(self, rt_doc):
         """
         Function: 
             Attribute: 
@@ -146,7 +146,7 @@ page1 = RT_main()
 #Creates the html format for web scraping.
 page_content = page1.get_html()
 #Places collected movie names into variable name.
-name = page1.get_movie_name(page_content)
+name = page1.get_movie_title(page_content)
 #Places collected movies movie into a variable year.
 year = page1.get_movie_year(page_content)
 #Places movie ratings into a movie rating variable.
@@ -165,4 +165,6 @@ movie_data = pd.DataFrame.from_dict(movie_catalog, orient='index')
 movie_data=movie_data.transpose()
 #Saves collected movie data into a csv format. 
 movie_data.to_csv('page_1_rt2023_web_scraping.csv')
+
+#Test print to make sure elements are formatted correctly. 
 print(movie_data)

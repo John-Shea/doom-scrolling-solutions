@@ -16,7 +16,7 @@ class RT_page4(RT_main):
             rt_doc = BeautifulSoup(self.page_contents, 'html.parser')
         return rt_doc
 
-    def get_movie_name(self, rt_doc):
+    def get_movie_title(self, rt_doc):
         movie_name=[]
         movie_name_tags=rt_doc.find_all('div',{'class': "article_movie_title"})
         for tag in movie_name_tags:
@@ -57,7 +57,7 @@ import pandas as pd
 
 page4 = RT_page4()
 page_content = page4.get_html()
-name = page4.get_movie_name(page_content)
+name = page4.get_movie_title(page_content)
 year = page4.get_movie_year(page_content)
 stars = page4.get_stars(page_content)
 movie_score = page4.get_rating(page_content)

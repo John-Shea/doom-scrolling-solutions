@@ -15,14 +15,14 @@ def main_page():
 
     df = pd.read_csv("page_1_rt2023_web_scraping.csv") 
     text_search = st.text_input("Search movies by title or year", value="")
-    m1 = df["Name"].str.contains(text_search)
-    m2 = df["Year"].str.contains(text_search)
+    movie_title_search = df["Name"].str.contains(text_search)
+    movie_year_search = df["Year"].str.contains(text_search)
 
-    maxValue = float(df["Rating"].max())
-    minValue = float(df["Rating"].min())
-    rating_sort = st.slider('Rating Scale:', min_value=minValue, max_value=maxValue, value=[minValue, maxValue])
+    max_score = float(df["Rating"].max())
+    min_score = float(df["Rating"].min())
+    rating_sort = st.slider('Rating Scale:', min_value=min_score, max_value=min_score, value=[min_score, max_score])
     df_filtered = df[(df["Rating"] >= rating_sort[0]) & (df["Rating"] <= rating_sort[1])]
-    df_search = df[m1 | m2]
+    df_search = df[movie_title_search | movie_year_search]
 
     if text_search:
         st.write(df_search)
@@ -51,14 +51,14 @@ def page2():
 
     df = pd.read_csv("page2_rt25_tv_web_scraping.csv") 
     text_search = st.text_input("Search movies by title or year", value="")
-    m1 = df["Name"].str.contains(text_search)
-    m2 = df["Year"].str.contains(text_search)
+    movie_title_search = df["Name"].str.contains(text_search)
+    movie_year_search = df["Year"].str.contains(text_search)
 
-    maxValue = float(df["Rating"].max())
-    minValue = float(df["Rating"].min())
-    rating_sort = st.slider('Rating Scale:', min_value=minValue, max_value=maxValue, value=[minValue, maxValue])
+    max_score = float(df["Rating"].max())
+    min_score = float(df["Rating"].min())
+    rating_sort = st.slider('Rating Scale:', min_value=min_score, max_value=min_score, value=[min_score, max_score])
     df_filtered = df[(df["Rating"] >= rating_sort[0]) & (df["Rating"] <= rating_sort[1])]
-    df_search = df[m1 | m2]
+    df_search = df[movie_title_search | movie_year_search]
 
     if text_search:
         st.write(df_search)
@@ -86,14 +86,14 @@ def page3():
 
     df = pd.read_csv("page3_movie_web_scraping25.csv") 
     text_search = st.text_input("Search movies by title or year", value="")
-    m1 = df["Name"].str.contains(text_search)
-    m2 = df["Year"].str.contains(text_search)
+    movie_title_search = df["Name"].str.contains(text_search)
+    movie_year_search = df["Year"].str.contains(text_search)
 
-    maxValue = float(df["Rating"].max())
-    minValue = float(df["Rating"].min())
-    rating_sort = st.slider('Rating Scale:', min_value=minValue, max_value=maxValue, value=[minValue, maxValue])
+    max_score = float(df["Rating"].max())
+    min_score = float(df["Rating"].min())
+    rating_sort = st.slider('Rating Scale:', min_value=min_score, max_value=min_score, value=[min_score, max_score])
     df_filtered = df[(df["Rating"] >= rating_sort[0]) & (df["Rating"] <= rating_sort[1])]
-    df_search = df[m1 | m2]
+    df_search = df[movie_title_search | movie_year_search]
 
     if text_search:
         st.write(df_search)
@@ -121,14 +121,14 @@ def page4():
 
     df = pd.read_csv("page4_rttv2023_web_scraping.csv") 
     text_search = st.text_input("Search movies by title or year", value="")
-    m1 = df["Name"].str.contains(text_search)
-    m2 = df["Year"].str.contains(text_search)
+    movie_title_search = df["Name"].str.contains(text_search)
+    movie_year_search = df["Year"].str.contains(text_search)
 
-    maxValue = float(df["Rating"].max())
-    minValue = float(df["Rating"].min())
-    rating_sort = st.slider('Rating Scale:', min_value=minValue, max_value=maxValue, value=[minValue, maxValue])
+    max_score = float(df["Rating"].max())
+    min_score = float(df["Rating"].min())
+    rating_sort = st.slider('Rating Scale:', min_value=min_score, max_value=min_score, value=[min_score, max_score])
     df_filtered = df[(df["Rating"] >= rating_sort[0]) & (df["Rating"] <= rating_sort[1])]
-    df_search = df[m1 | m2]
+    df_search = df[movie_title_search | movie_year_search]
 
     if text_search:
         st.write(df_search)
@@ -156,14 +156,14 @@ def page5():
 
     df = pd.read_csv("page5_RT_2024_tvscraping.csv") 
     text_search = st.text_input("Search movies by title or year", value="")
-    m1 = df["Name"].str.contains(text_search)
-    m2 = df["Year"].str.contains(text_search)
+    movie_title_search = df["Name"].str.contains(text_search)
+    movie_year_search = df["Year"].str.contains(text_search)
 
-    maxValue = float(df["Rating"].max())
-    minValue = float(df["Rating"].min())
-    rating_sort = st.slider('Rating Scale:', min_value=minValue, max_value=maxValue, value=[minValue, maxValue])
+    max_score = float(df["Rating"].max())
+    min_score = float(df["Rating"].min())
+    rating_sort = st.slider('Rating Scale:', min_value=min_score, max_value=min_score, value=[min_score, max_score])
     df_filtered = df[(df["Rating"] >= rating_sort[0]) & (df["Rating"] <= rating_sort[1])]
-    df_search = df[m1 | m2]
+    df_search = df[movie_title_search | movie_year_search]
 
     if text_search:
         st.write(df_search)
@@ -191,14 +191,14 @@ def page6():
 
     df = pd.read_csv("page5_imdb_web_scraping.csv") 
     text_search = st.text_input("Search movies by title or year", value="")
-    m1 = df["Name"].str.contains(text_search)
-    m2 = df["Year"].str.contains(text_search)
+    movie_title_search = df["Name"].str.contains(text_search)
+    movie_year_search = df["Year"].str.contains(text_search)
 
-    maxValue = float(df["Rating"].max())
-    minValue = float(df["Rating"].min())
-    rating_sort = st.slider('Rating Scale:', min_value=minValue, max_value=maxValue, value=[minValue, maxValue])
+    max_score = float(df["Rating"].max())
+    min_score = float(df["Rating"].min())
+    rating_sort = st.slider('Rating Scale:', min_value=min_score, max_value=min_score, value=[min_score, max_score])
     df_filtered = df[(df["Rating"] >= rating_sort[0]) & (df["Rating"] <= rating_sort[1])]
-    df_search = df[m1 | m2]
+    df_search = df[movie_title_search | movie_year_search]
 
     if text_search:
         st.write(df_search)
