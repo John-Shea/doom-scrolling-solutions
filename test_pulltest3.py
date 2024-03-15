@@ -3,7 +3,7 @@ from unittest.mock import patch
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from webScraping.pull_4_rt_tvpast25 import RT_main
+from web_scrape_rt_past25 import RT_page3
 from bs4 import BeautifulSoup
 
 mock_html_content = """
@@ -22,11 +22,11 @@ class MockResponse:
 
 class TestRTPage4(unittest.TestCase):
 
-    @patch('webScraping.pull_2_rt2023_tv.requests.get')
+    @patch('web_scrape_rt_past25.requests.get')
     def setUp(self, mock_get):
         """Set up mock before each test."""
         mock_get.return_value = MockResponse(mock_html_content, 200)
-        self.re_call = RT_main()
+        self.re_call = RT_page3()
 
     def test_get_html(self):
         """Test the get_html method."""
@@ -37,7 +37,7 @@ class TestRTPage4(unittest.TestCase):
     def test_get_movie_name(self):
         """Test the get_movie_name method."""
         rt_test = self.re_call.get_html()
-        movie_names = self.re_call.get_movie_name(rt_test)
+        movie_names = self.re_call.get_movie_title(rt_test)
         self.assertIn('Example Movie Title', movie_names)
 
     def test_get_movie_year(self):

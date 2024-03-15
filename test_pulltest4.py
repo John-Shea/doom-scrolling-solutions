@@ -37,7 +37,7 @@ class TestRTPage4(unittest.TestCase):
     def test_get_movie_name(self):
         """Test the get_movie_name method."""
         rt_test = self.re_call.get_html()
-        movie_names = self.re_call.get_movie_name(rt_test)
+        movie_names = self.re_call.get_movie_title(rt_test)
         self.assertIn('Example Movie Title', movie_names)
 
     def test_get_movie_year(self):

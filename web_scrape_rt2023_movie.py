@@ -18,7 +18,6 @@ class RT_main():
         self.access_check = requests.get(self.rt_url)
         self.page_contents = self.access_check.text
 
-
 #Function to write out html formatting for webscraping. 
     def get_html(self):
         """
@@ -129,12 +128,8 @@ class RT_main():
         #Returns list of critic consensus reviews. 
         return summary_listing
 
-
-
-
 #Necessary library for data list conversion to csv format.
 import pandas as pd
-
 
 
 ##
@@ -161,7 +156,7 @@ summary = page1.get_critic_consensus(page_content)
 movie_catalog={'Name':name,'Year':year,'Rating':movie_score,'Critic Consensus':summary}
 #Converts to a dataframe and helps orient for csv format. 
 movie_data = pd.DataFrame.from_dict(movie_catalog, orient='index')
-#Coverts 1D array into a 2D column format.
+#Coverts 1D array into a 2D column format. Handles column formatting into csv. 
 movie_data=movie_data.transpose()
 #Saves collected movie data into a csv format. 
 movie_data.to_csv('page_1_rt2023_web_scraping.csv')

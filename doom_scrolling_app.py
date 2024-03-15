@@ -71,10 +71,6 @@ def main_page():
     st.dataframe(checked_row)
 
 
-
-
-
-
 #page formatting continues the same....
     
 def page2():
