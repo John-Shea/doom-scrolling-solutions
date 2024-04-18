@@ -1,8 +1,8 @@
 import requests
-from web_scrape_rt2023_movie import RT_main
+# from web_scrape_rt2023_movie import RT_main
 #Necessary imports for webscraping.
 
-class RT_page2(RT_main):
+class RT_page2():
     def __init__(self):
         """
         Function: 
@@ -45,6 +45,7 @@ class RT_page2(RT_main):
             Returns: 
                 -List of all the tv show titles. 
         """
+
         movie_name=[]
         movie_name_tags=rt_doc.find_all('div',{'class': "article_movie_title"})
         for tag in movie_name_tags:
